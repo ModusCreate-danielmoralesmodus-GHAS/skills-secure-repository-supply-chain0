@@ -9,13 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout Repository'
-        uses: actions/checkout@v4 # Upgrade to v4 for better support
+        uses: actions/checkout@v4
 
       - name: Dependency Review
-        uses: actions/dependency-review-action@v4 # Upgrade to v4
+        uses: actions/dependency-review-action@v4
         with:
-          # Use 'all' or 'runtime' to ensure the test package is caught
-          fail-on-scopes: all 
+          # This list covers both production and dev dependencies
+          fail-on-scopes: runtime, development 
           deny-licenses: LGPL-2.0, BSD-2-Clause
-          # Setting this to 'low' ensures it catches almost any vulnerability
           fail-on-severity: low
