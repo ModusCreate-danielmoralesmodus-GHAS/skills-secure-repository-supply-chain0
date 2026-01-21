@@ -1,3 +1,10 @@
+name: 'Dependency license'
+
+on: [pull_request]
+
+permissions:
+  contents: read
+
 jobs:
   license-check:
     runs-on: ubuntu-latest
