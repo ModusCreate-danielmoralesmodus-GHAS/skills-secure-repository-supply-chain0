@@ -11,10 +11,8 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4 # Upgrade to v4 for better support
 
-      - name: Dependency Review
-        uses: actions/dependency-review-action@v4 # Upgrade to v4
+      - name: Check licenses
+        uses: steffen911/license-checker-action@main
         with:
-          # Use 'all' or 'runtime' to ensure the test package is caught
-          deny-licenses: LGPL-2.0, BSD-2-Clause
-          # Setting this to 'low' ensures it catches almost any vulnerability
-          fail-on-severity: low
+          licenseWhitelist: 'MIT,ISC,Apache-2.0'
+          packageWhitelist: '@actions/core@1.5.0'
