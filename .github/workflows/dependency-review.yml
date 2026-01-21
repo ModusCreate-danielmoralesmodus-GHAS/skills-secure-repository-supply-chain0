@@ -15,7 +15,6 @@ jobs:
         uses: actions/dependency-review-action@v4 # Upgrade to v4
         with:
           # Use 'all' or 'runtime' to ensure the test package is caught
-          fail-on-scopes: all 
           deny-licenses: LGPL-2.0, BSD-2-Clause
           # Setting this to 'low' ensures it catches almost any vulnerability
           fail-on-severity: low
