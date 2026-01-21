@@ -19,7 +19,8 @@ jobs:
           cache: 'npm' # Optional: speeds up subsequent runs
 
       - name: Install dependencies
-        run: npm install # This is the crucial missing step
+        run: npm install
+        working-directory: ./code/src/AttendeeSite # Change this
 
       - name: Check Licenses
         uses: steffen911/license-checker-action@main
